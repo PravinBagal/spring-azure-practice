@@ -12,7 +12,7 @@ public class SpringAzurePracticeApplication {
 	@GetMapping("/message")
 	public String message()
 	{
-		return "Congrtas..yur deploy Successfully";
+		return "Congraulations..your SpringBoot App Service deploy Successfully";
 	}
 	
 	
