@@ -22,29 +22,5 @@ stages:
         ArtifactName: 'drop'
         publishLocation: 'Container'
 
-- stage: DeployToDev
-  jobs:
-  - job: DeployJob
-    pool:
-      vmImage: 'windows-latest'
-    dependsOn: Build
-    steps:
-    - download: current
-      artifact: drop
-    - script: echo 'Deploying to Dev environment'
-      displayName: 'Deploy to Dev'
-      # Add deployment steps (e.g., deploy to Azure App Service or copy files to server)
 
-- stage: DeployToProd
-  jobs:
-  - job: DeployJob
-    pool:
-      vmImage: 'windows-latest'
-    dependsOn: DeployToDev
-    steps:
-    - download: current
-      artifact: drop
-    - script: echo 'Deploying to Prod environment'
-      displayName: 'Deploy to Prod'
-      # Add deployment steps for production environment
 
